@@ -283,20 +283,6 @@ body {
 ::placeholder {
     color:#fff;
 }
-#footer {
-    color:#fff;
-    width:92vw;
-    padding:5vh 4vw;
-    text-align:right;
-    position:fixed;
-    z-index:1;
-    bottom:0;
-    font-size:16px;
-    font-weight:bold;
-}
-#footer a {
-    color:rgb(255, 50, 50) ;
-}
 #particles-js {
     position:fixed;
     width:100vw;
@@ -329,9 +315,6 @@ body {
     }
     #work {
         display:none;
-    }
-    #footer {
-        text-align:center;
     }
     #middle {
         width:90vw;
