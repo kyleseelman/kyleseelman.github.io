@@ -90,7 +90,7 @@ body {
     font-size:25px;
     transform:rotate(-90deg);
     background:transparent;
-    color:rgb(0, 0, 0);
+    color:#fff;
     position:fixed;
     left:0;
     bottom:40vh;
@@ -108,7 +108,7 @@ body {
     font-size:25px;
     transform:rotate(90deg);
     background:transparent;
-    color:rgb(0, 0, 0);
+    color:#fff;
     position:fixed;
     right:0;
     bottom:40vh;
@@ -125,7 +125,7 @@ body {
     text-align:center;
     font-size:25px;
     background:transparent;
-    color:rgb(0, 0, 0);
+    color:#fff;
     position:fixed;
     bottom:0;
     left:45vw;
@@ -165,7 +165,7 @@ body {
 }
 .social:hover { 
     cursor: pointer;
-    color:rgb(255, 255, 255);
+    color:rgb(43, 88, 211);
 }
 .container {
     width:90vw;
