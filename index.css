@@ -92,7 +92,7 @@ body {
     color:#fff;
     position:fixed;
     bottom:0;
-    left:40vw;
+    left:35vw;
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -109,7 +109,7 @@ body {
     color:#fff;
     position:fixed;
     bottom:0;
-    right:40vw;
+    right:35vw;
     display:flex;
     flex-direction: column;
     justify-content:center;
