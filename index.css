@@ -92,8 +92,8 @@ body {
     background:transparent;
     color:#fff;
     position:fixed;
-    left:0;
-    bottom:40vh;
+    bottom:0;
+    right:15vh;
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -110,8 +110,8 @@ body {
     background:transparent;
     color:#fff;
     position:fixed;
-    right:0;
-    bottom:40vh;
+    bottom:0;
+    left:15vh;
     display:flex;
     flex-direction: column;
     justify-content:center;
