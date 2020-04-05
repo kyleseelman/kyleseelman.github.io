@@ -135,15 +135,15 @@ body {
     border-radius:100px 100px 0px 0px;
 }
 #about:hover {
-    background:rgba(255, 255, 255, 0);
+    background:rgba(255, 255, 255, 0.185);
     cursor:pointer;
 }
 #work:hover {
-    background:rgba(255, 255, 255, 0);
+    background:rgba(255, 255, 255, 0.185);
     cursor:pointer;
 }
 #contact:hover {
-    background:rgba(255, 255, 255, 0);
+    background:rgba(255, 255, 255, 0.185);
     cursor:pointer;
 }
 #middle table {
@@ -294,10 +294,10 @@ body {
     background: #fff; 
 }
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 50, 50); 
+    background: rgb(0, 0, 0); 
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 50, 50,0.8); 
+    background: rgba(0, 0, 0, 0.8); 
 }
 ::selection {
 	color: #fff;
