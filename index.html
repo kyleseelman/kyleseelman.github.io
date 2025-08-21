@@ -1,97 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kyle Seelman | AI Researcher</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyle Seelman | Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .portal-card {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .portal-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-  <!-- <div class="bg-yellow-100 text-yellow-800 text-center text-sm font-semibold p-3 shadow-md">
-    🎯 On the Job Market | Expected Graduation: June 2025
-  </div> -->
-
-  <header class="bg-white shadow p-6">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <img src="/headshot.jpg" alt="Kyle Seelman" class="w-16 h-16 rounded-full object-cover">
-        <h1 class="text-3xl font-bold">Kyle Seelman</h1>
-      </div>
-      <nav class="space-x-6">
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#research" class="hover:underline">Research</a>
-        <a href="#projects" class="hover:underline">Projects</a>
-        <!-- <a href="#skills" class="hover:underline">Skills</a> -->
-        <a href="Kyle_Seelman_CV.pdf" class="text-blue-600 font-medium">CV</a>
-      </nav>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="max-w-4xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Kyle Seelman</h1>
+            <p class="text-lg text-gray-600">Ph.D. Candidate</p>
+        </div>
+        
+        <!-- Portal Options -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Main Website -->
+            <div class="portal-card bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center" onclick="goToMainWebsite()">
+                <div class="text-4xl mb-4 text-blue-600">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Main Website</h3>
+                <p class="text-gray-600 mb-6">
+                    Research publications, experience, and professional background
+                </p>
+                <div class="bg-blue-50 text-blue-700 px-4 py-2 rounded-md text-sm font-medium">
+                    Enter Site
+                </div>
+            </div>
+            
+            <!-- Dissertation -->
+            <div class="portal-card bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center" onclick="goToDissertation()">
+                <div class="text-4xl mb-4 text-purple-600">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-3">Dissertation</h3>
+                <p class="text-gray-600 mb-6">
+                    Chapter drafts and research materials
+                </p>
+                <div class="bg-purple-50 text-purple-700 px-4 py-2 rounded-md text-sm font-medium">
+                    <i class="fas fa-lock mr-2"></i>
+                    Password Required
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center text-gray-500 mt-12">
+            <p class="text-sm">
+                <a href="mailto:kseelman@umd.edu" class="hover:text-blue-600">kseelman@umd.edu</a>
+            </p>
+        </div>
     </div>
-  </header>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-16">
-    <!-- About -->
-    <section id="about">
-      <h2 class="text-2xl font-bold mb-2">About</h2>
-      <p class="text-lg">
-        I'm a 5th Ph.D. student at the University of Maryland, luckily advised by the great Dr. Jordan Boyd-Graber, where my research focused on human-centered natural language processing, including interactive topic modeling and large language models. 
-        My work bridges the gap between foundational AI research and real-world, human-focused applications.<br>
-
-        In the fall I will be working as a Senior Machine Learning Researcher at Roblox, where I will work on cutting-edge problems in 3D/4D Generative AI, search and recommendation systems, and agentic AI.
-
-      </p>
-      <div class="mt-4">
-        <a href="mailto:kseelman@umd.edu" class="text-blue-500">kseelman@umd.edu</a> | 
-        <a href="https://github.com/kyleseelman" class="text-blue-500">GitHub</a> | 
-        <a href="https://linkedin.com/in/kyleseelman" class="text-blue-500">LinkedIn</a>
-      </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research">
-      <h2 class="text-2xl font-bold mb-2">Publications</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li><em>Archivist: Incorporating the World Knowledge of Neural Language Models into Topic Models as a Bayesian Prior</em> <br> <b>Kyle Seelman</b>, Jordan Boyd-Graber <br> (EMNLP 2025, submitted)</li>
-        <li><em>From Text to Traits: Zero-shot Personality Facet Prediction with Open-source Language Models</em> <br> <b>Kyle Seelman</b>, Anton Rytting, Triet Lee, Jordan Boyd-Graber <br> (CoNLL 2025, submitted)</li>
-        <li><em>Labeled Interactive Neural Topic Models: No Longer Take It or Leave It</em> <br> <b>Kyle Seelman</b>, Mozhi Zhang, Jordan Boyd-Graber <br> (ACL 2025, submitted)</li>
-        <li><em>Decoding Digital Discourse: An Observational Study using Multimodal Text and Image Machine Learning Models to Classify Sentiment, Hate, and Anti-Hate</em> <br> Thu T. Nguyen, Xiaohe Yue, Heran Mane, <b>Kyle Seelman</b>, Penchala Sai Priya Mullaputi, Elizabeth Dennard, Amrutha Alibilli, Junaid S. Merchant, Shaniece Criss, Yulin Hswen, Quynh C. Nguyen <br> (JIMR 2025)</li>
-        <li><em>What’s Different between Visual Question Answering for Machine ``Understanding'' Versus for Accessibility?</em> <br> Yang Trista Cao*, <b>Kyle Seelman*</b>, Kyungjun Lee*, Hal Daumé III <br> Best Theme Paper, AACL-IJCNLP 2022</li>
-        <li><em>Towards Automated Classification of Complex 4D-STEM Datasets</em><br>B. Savitzky, S. Zeltmann, L. Hughes, <b>K. Seelman</b>, M. Janish, M. Schneider, C. Gopal, P. Herring, A. Minor, C. Ophus <br> Microscopy and Microanalysis 2020 Proceedings </li>
-        <li><em>Second order time discretization for a coupled quasi-Newtonian fluid-poroelastic system</em><br>H. Lee, H. Kunwat, and <b>K. Seelman</b> <br> International Journal for Numerical Methods in Fluids. 2020</li>
-      </ul>
-    </section>
-
-    <!-- Projects 
-    <section id="projects">
-      <h2 class="text-2xl font-bold mb-2">Projects</h2>
-      <div class="space-y-4">
-        <div>
-          <h3 class="font-semibold">Interactive Topic Modeling Tool</h3>
-          <p>Developed an NLP interface for user-guided document exploration using human-in-the-loop topic models; deployed and evaluated through user studies and BM25 metrics.</p>
-        </div>
-        <div>
-          <h3 class="font-semibold">LLM Personality Predictor</h3>
-          <p>Built zero-shot and few-shot personality trait predictors using LLMs and evaluated across social media datasets.</p>
-        </div>
-        <div>
-          <h3 class="font-semibold">Visual Question Answering for Accessibility</h3>
-          <p>Created a VQA pipeline using CLIP and VisualBERT tailored to improve screen reader experiences for visually impaired users.</p>
-        </div>
-      </div>
-    </section>
-    -->
-    <!-- Skills 
-    <section id="skills">
-      <h2 class="text-2xl font-bold mb-2">Technical Skills</h2>
-      <ul class="grid grid-cols-2 gap-4 list-disc list-inside">
-        <li>Python, Java, C++, R, SQL</li>
-        <li>HTML, CSS, Javascript, Flask</li>
-        <li>PyTorch, Hugging Face, LangChain, TensorFlow</li>
-        <li>LLM Fine-tuning, Prompt Engineering, RAG</li>
-      </ul>
-    </section> -->
-  </main>
-
-  <footer class="text-center text-sm text-gray-500 p-4">
-    &copy; 2025 Kyle Seelman
-  </footer>
+    <script>
+        function goToMainWebsite() {
+            window.location.href = 'main.html';
+        }
+        
+        function goToDissertation() {
+            window.location.href = 'dissertation-drafts.html';
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '1') {
+                goToMainWebsite();
+            } else if (e.key === '2') {
+                goToDissertation();
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 

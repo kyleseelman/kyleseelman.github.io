@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kyle Seelman | AI Researcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .dissertation-section {
+      display: none;
+    }
+    
+    .dissertation-section.active {
+      display: block;
+    }
+    
+    .password-form {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .password-input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+    
+    .password-button {
+      background: #3498db;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+    
+    .password-button:hover {
+      background: #2980b9;
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    
+    .draft-entry {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease;
+    }
+    
+    .draft-entry:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .status-indicator {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    .status-ready {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-drafting {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+    
+    .version-links {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    
+    .version-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 20px;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .version-link:hover {
+      background: #2980b9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .version-link.double-spaced {
+      background: #e74c3c;
+    }
+    
+    .version-link.double-spaced:hover {
+      background: #c0392b;
+    }
+    
+    .version-link.single-spaced {
+      background: #27ae60;
+    }
+    
+    .version-link.single-spaced:hover {
+      background: #229954;
+    }
+    
+    .version-link.diff {
+      background: #9b59b6;
+    }
+    
+    .version-link.diff:hover {
+      background: #8e44ad;
+    }
+    
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .chapter-status {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- <div class="bg-yellow-100 text-yellow-800 text-center text-sm font-semibold p-3 shadow-md">
+    🎯 On the Job Market | Expected Graduation: June 2025
+  </div> -->
+
+  <header class="bg-white shadow p-6">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="/headshot.jpg" alt="Kyle Seelman" class="w-16 h-16 rounded-full object-cover">
+        <h1 class="text-3xl font-bold">Kyle Seelman</h1>
+      </div>
+      <nav class="space-x-6">
+        <a href="index.html" class="text-blue-600 hover:underline">🏠 Home</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#research" class="hover:underline">Research</a>
+        <a href="#dissertation" class="hover:underline">Dissertation</a>
+        <a href="#projects" class="hover:underline">Projects</a>
+        <!-- <a href="#skills" class="hover:underline">Skills</a> -->
+        <a href="Kyle_Seelman_CV.pdf" class="text-blue-600 font-medium">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-16">
+    <!-- About -->
+    <section id="about">
+      <h2 class="text-2xl font-bold mb-2">About</h2>
+      <p class="text-lg">
+        I'm a 5th Ph.D. student at the University of Maryland, luckily advised by the great Dr. Jordan Boyd-Graber, where my research focused on human-centered natural language processing, including interactive topic modeling and large language models. 
+        My work bridges the gap between foundational AI research and real-world, human-focused applications.<br>
+
+        In the fall I will be working as a Senior Machine Learning Researcher at Roblox, where I will work on cutting-edge problems in 3D/4D Generative AI, search and recommendation systems, and agentic AI.
+
+      </p>
+      <div class="mt-4">
+        <a href="mailto:kseelman@umd.edu" class="text-blue-500">kseelman@umd.edu</a> | 
+        <a href="https://github.com/kyleseelman" class="text-blue-500">GitHub</a> | 
+        <a href="https://linkedin.com/in/kyleseelman" class="text-blue-500">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <h2 class="text-2xl font-bold mb-2">Publications</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><em>Archivist: Incorporating the World Knowledge of Neural Language Models into Topic Models as a Bayesian Prior</em> <br> <b>Kyle Seelman</b>, Jordan Boyd-Graber <br> In Progress</li>
+        <li><em>From Text to Traits: Zero-shot Personality Facet Prediction with Open-source Language Models</em> <br> <b>Kyle Seelman</b>, Anton Rytting, Triet Lee, Jordan Boyd-Graber <br>  In Progress</li>
+        <li><em>Labeled Interactive Neural Topic Models: No Longer Take It or Leave It</em> <br> <b>Kyle Seelman</b>, Mozhi Zhang, Jordan Boyd-Graber <br>  In Progress</li>
+        <li><em>Decoding Digital Discourse: An Observational Study using Multimodal Text and Image Machine Learning Models to Classify Sentiment, Hate, and Anti-Hate</em> <br> Thu T. Nguyen, Xiaohe Yue, Heran Mane, <b>Kyle Seelman</b>, Penchala Sai Priya Mullaputi, Elizabeth Dennard, Amrutha Alibilli, Junaid S. Merchant, Shaniece Criss, Yulin Hswen, Quynh C. Nguyen <br> (JIMR 2025)</li>
+        <li><em>What's Different between Visual Question Answering for Machine ``Understanding'' Versus for Accessibility?</em> <br> Yang Trista Cao*, <b>Kyle Seelman*</b>, Kyungjun Lee*, Hal Daumé III <br> Best Theme Paper, AACL-IJCNLP 2022</li>
+        <li><em>Towards Automated Classification of Complex 4D-STEM Datasets</em><br>B. Savitzky, S. Zeltmann, L. Hughes, <b>K. Seelman</b>, M. Janish, M. Schneider, C. Gopal, P. Herring, A. Minor, C. Ophus <br> Microscopy and Microanalysis 2020 Proceedings </li>
+        <li><em>Second order time discretization for a coupled quasi-Newtonian fluid-poroelastic system</em><br>H. Lee, H. Kunwat, and <b>K. Seelman</b> <br> International Journal for Numerical Methods in Fluids. 2020</li>
+      </ul>
+    </section>
+
+    <!-- Dissertation Drafts
+    <section id="dissertation">
+      <h2 class="text-2xl font-bold mb-2">Dissertation Drafts</h2>
+      
+       Password Form -->
+      <!-- <div id="password-form" class="password-form">
+        <h3 class="text-xl font-semibold mb-4">🔒 Password Protected</h3>
+        <p class="text-gray-600 mb-4">Enter the password to access dissertation drafts</p>
+        <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+        <button onclick="checkPassword()" class="password-button">Access Drafts</button>
+        <div id="error-message" class="error-message"></div>
+      </div>
+      
+
+    <!-- Projects 
+    <section id="projects">
+      <h2 class="text-2xl font-bold mb-2">Projects</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold">Interactive Topic Modeling Tool</h3>
+          <p>Developed an NLP interface for user-guided document exploration using human-in-the-loop topic models; deployed and evaluated through user studies and BM25 metrics.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">LLM Personality Predictor</h3>
+          <p>Built zero-shot and few-shot personality trait predictors using LLMs and evaluated across social media datasets.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">Visual Question Answering for Accessibility</h3>
+          <p>Created a VQA pipeline using CLIP and VisualBERT tailored to improve screen reader experiences for visually impaired users.</p>
+        </div>
+      </div>
+    </section>
+    -->
+    <!-- Skills 
+    <section id="skills">
+      <h2 class="text-2xl font-bold mb-2">Technical Skills</h2>
+      <ul class="grid grid-cols-2 gap-4 list-disc list-inside">
+        <li>Python, Java, C++, R, SQL</li>
+        <li>HTML, CSS, Javascript, Flask</li>
+        <li>PyTorch, Hugging Face, LangChain, TensorFlow</li>
+        <li>LLM Fine-tuning, Prompt Engineering, RAG</li>
+      </ul>
+    </section> -->
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 p-4">
+    &copy; 2025 Kyle Seelman
+  </footer>
+
+  <script>
+    // Password protection functionality
+    function checkPassword() {
+      const password = document.getElementById('password-input').value;
+      const correctPassword = 'dissertation2024'; // Change this to your desired password
+      const errorMessage = document.getElementById('error-message');
+      const passwordForm = document.getElementById('password-form');
+      const dissertationContent = document.getElementById('dissertation-content');
+
+      if (password === correctPassword) {
+        passwordForm.style.display = 'none';
+        dissertationContent.classList.add('active');
+        // Store in session storage so user doesn't have to re-enter password
+        sessionStorage.setItem('dissertationAccess', 'granted');
+      } else {
+        errorMessage.textContent = 'Incorrect password. Please try again.';
+        document.getElementById('password-input').value = '';
+      }
+    }
+
+    // Check if user already has access from session storage
+    window.addEventListener('load', function() {
+      if (sessionStorage.getItem('dissertationAccess') === 'granted') {
+        document.getElementById('password-form').style.display = 'none';
+        document.getElementById('dissertation-content').classList.add('active');
+      }
+    });
+
+    // Add click handlers for the version links
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('version-link') && !e.target.classList.contains('bg-gray-400')) {
+        e.preventDefault();
+        const version = e.target.textContent.trim();
+        alert(`Opening ${version}...\n\nIn a real implementation, this would open the actual PDF file.`);
+      }
+    });
+
+    // Add some interactive features for draft entries
+    document.addEventListener('mouseenter', function(e) {
+      if (e.target.closest('.draft-entry') && !e.target.closest('.draft-entry').classList.contains('opacity-60')) {
+        e.target.closest('.draft-entry').style.transform = 'translateY(-2px)';
+      }
+    }, true);
+    
+    document.addEventListener('mouseleave', function(e) {
+      if (e.target.closest('.draft-entry') && !e.target.closest('.draft-entry').classList.contains('opacity-60')) {
+        e.target.closest('.draft-entry').style.transform = 'translateY(0)';
+      }
+    }, true);
+
+    // Enter key support for password input
+    document.getElementById('password-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+  </script>
+</body>
+</html>
